@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <p><%= data.id %>.<%= data.title %> :</p>
+    <span><%= data.description%></span>
+    </div>
+    <form action="/topic/<%= data.id %>/edit"> 
+        <input type="submit" value="수정" />    
+    </form>
+
+               
+    <form method="POST" action="/topic/<%= data.id %>/delete" > 
+            <input type="submit" value = "삭제" />
+    </form>
+
+    <form action="/topic/add"> 
+        <input type="submit" value="홈으로" />    
+
+    </form>
+
+    <!-- <script>
+            function click_button(){
+
+                var message = window.confirm
+                ('삭제하시겠습니까?');
+                return(message);
+            }
+    </script> -->
+
+    
+    
+
+</body>
+</html>

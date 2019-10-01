@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>add</title>
+</head>
+<body>
+    <h1 style="color: darkred">Server Side JavaScript</h1>
+    <ol>
+        <%for(var i=0; i<datas.length;i++) {%>
+            <a href='/topic/<%= datas[i].id %>/edit'>
+               <li><%= datas[i].title %></li>
+            </a>
+               <!-- <span><%= datas[i].description %></span> -->
+        <%};%>
+    </ol>
+   
+    <p>
+    <a href='/topic/<%= data.id %>/edit'>
+        <%= data.title %>
+    </a>
+    </p>
+        <!-- <span><%= data.description %></span> -->
+       
+    <article>
+    <form method="POST" action="/topic/<%= data.id %>/edit">
+        <p><input type='text' name="title" value="<%= data.title %>" placeholder="title"/></p>
+        <p><textarea name="description" rows="6" placeholder="description"><%= data.description %></textarea></p>
+        <p><input type='text' name="author" value="<%= data.author %>" placeholder="author"/></p>
+        <input type="submit" value= "수정" />
+    </form>
+
+    
+
+
+    </article>
+    <ul>
+        <li><a href="/topic/add">취소</a></li>
+    </ul>
+</body>
+</html>
